@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Remove default margin */
+    background-color: #FFF8F3;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+.navbar {
+    padding: 1rem 2rem;
+    /* background-color: #FFF8F3;
+    background-color: transparent; */
+
+}
+
+.nav-link {
+    margin-right: 1rem;
+    color: #000;
+    /* background-color: #FFF8F3; */
+}
+
+.nav-link:hover {
+   color:  #007bff;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #aa7b4c; /* Highlight the active link */
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: calc(100vh - 100px); /* Full screen height minus footer height */
+    background-size: cover; /*Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    padding: 50px 0;
+    background-image: url('https://asandam.github.io/images/BE-Signature-Shot-10.jpg');
+    background-color: #e1d5cd;
+    /* background-blend-mode: overlay; */
+}
+
+@media (max-width: 768px) {
+    #main {
+        background-size: cover; /* Cover the entire screen */
+        background-position: center; /* Center the image */
+    }
+}
+
+#main-text {
+
+    text-align: center;
+    background-color: rgba(225, 213, 205, 0.6);
+    padding: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+#main-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: bold;
+    /* text-align: right; */
+    margin-bottom: 20px;
+    /* background-color: rgba(227, 216, 215, 0.7); */
+}
+
+#main-text p {
+    font-family: 'Playfair Display', sans-serif;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    /* text-align: right; */
+    /* background-color: rgba(230, 217, 214, 0.7); */
+}
+
+#main-text a {
+    background-color: rgba(225, 213, 205, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 100px;
+}
+
+footer {
+    background-color: #FFF8F3;
+    border-top: 1px solid #4e413c;
+    height: 100px; /* Fixed footer height */
+    color: #4e413c;
+}
+
+footer p{
+    color: #00000080;
+}
+
+.nav-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background-color: #FFF8F3;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    cursor: pointer;
+}
