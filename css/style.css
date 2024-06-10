@@ -119,3 +119,53 @@ footer p{
     gap: 20px; 
     cursor: pointer;
 }
+
+/* about page style */
+#main-section{
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    height: calc(100vh - 100px); /* Full screen height minus footer height */
+    background-size: cover; /*Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    padding: 50px 0;
+    background-image: url('https://asandam.github.io/images/jewellery.jpg');
+    background-color: #e1d5cd; 
+}
+
+@media (max-width: 768px) {
+    #main-section {
+        background-size: cover; /* Cover the entire screen */
+        background-position: center; /* Center the image */
+    }
+}
+
+#text {
+
+    text-align: center;
+    background-color:rgba(225, 213, 205, 0.6);
+    padding: 20px;
+    background-size: cover;
+    margin-top: 20%;
+}
+
+#text h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: bold;
+    /* text-align: right; */
+    margin-bottom: 20px;
+    /* background-color: rgba(227, 216, 215, 0.7); */
+}
+
+#text p {
+    font-family: 'Playfair Display', sans-serif;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    /* text-align: right; */
+    /* background-color: rgba(230, 217, 214, 0.7); */
+}
