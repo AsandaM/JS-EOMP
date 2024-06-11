@@ -26,7 +26,7 @@ function addProductToPage(product) {
     productRow.innerHTML += `
         <div class="col">
             <div class="card h-100">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                <img src="${product.image}" class="card-img-top img-fluid" alt="${product.name}">
                 <div class="card-body">
                     <h5 class="card-title">${product.name}</h5>
                     <p class="card-text">${product.description}</p>
