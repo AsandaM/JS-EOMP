@@ -227,3 +227,14 @@ table, th, td {
     align-items: center;
     border: none;
 }
+
+/* Contact style */
+
+#submit{
+    border-color: #aa7b4c;
+    margin-bottom: 5%;
+}
+
+.form-control{
+    border-color: #aa7b4c;
+}
