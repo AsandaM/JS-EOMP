@@ -169,3 +169,10 @@ footer p{
     /* text-align: right; */
     /* background-color: rgba(230, 217, 214, 0.7); */
 }
+
+/* Products style */
+
+.card-img-top{
+    width: 250px;
+    height: 200px;
+}
