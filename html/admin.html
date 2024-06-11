@@ -59,14 +59,15 @@
 </nav>
 <main id="admin">
     <!-- main Section -->
-    <div class="row row-cols-1 row-cols-md-1 g-4">
+    <div class="row row-cols-1 row-cols-md-1 g-4 justify-content-center">
         <div class="col">
           <div class="card h-100 bg-transparent">
             <div class="card-body">
               <h5 class="card-title">Shipping & Delivery</h5>
               <p class="card-text">
 
-                <table class="center"> 
+                <div class="table-responsive">
+                  <table class="center"> 
                     <thead>
                         <th> SHIPPING OPTION </th>
                         <th> DELIVERED WITHIN </th>
@@ -88,6 +89,9 @@
                     </tr>
                 </table>
 
+                </div>
+                
+
                 <br>
 
                 <div id="halaUs">
@@ -102,7 +106,7 @@
                     <li>Business days do not include weekends or public holidays.</li>
                     <li>We are not responsible for any delay, late delivery or failure to deliver.</li>
                     <li>There may be a delay of up to 2-4 business days during our sale periods.</li>
-                    <li>Please note once your order has been placed online, we are unable to make amendments to product, customer, or delivery details. Alternatively, if you have any queries about placing an order or an order you have received, please <a href="./contact.html">contact</a> our Customer Care team.</li>
+                    <li>Please note once your order has been placed online, we are unable to make amendments to product, customer, or delivery details. <br>Alternatively, if you have any queries about placing an order or an order you have received, please <a href="./contact.html">contact</a> our Customer Care team.</li>
                 </ul>
 
                 
@@ -123,7 +127,7 @@
                 <b>Unfortunately, we cannot refund or exchange earrings, body piercing products, hair accessories and face masks for hygiene reasons. We also cannot refund or exchange gift cards.</b>
 
                 <p>PLEASE NOTE:</p>
-                <p>CONDITIONS OF RETURN</p>
+                <p><b>CONDITIONS OF RETURN</b></p>
                 <ul>
                     <li>Items returned must be in their original sale condition (unworn and unused with all original packaging and labels)</li>
                     <li>Earrings cannot be returned for change of mind reasons</li>
@@ -136,12 +140,17 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div id="faq" class="col">
           <div class="card h-100 bg-transparent">
             <div class="card-body">
               <h5 class="card-title">FAQ</h5>
               <p class="card-text">
-               <li> <button type="button" class="btn btn-link" id="liveToastBtn">Is your jewellery waterproof?</button></li>
+               <li> 
+                <button type="button" class="btn liveToastBtn" id="liveToastBtn" data-toast-id="liveToast"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                </svg> Is your jewellery waterproof?</button>
+              </li>
 
                 <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
@@ -151,9 +160,13 @@
                       <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                   </div>
-               <li> <button type="button" class="btn btn-link" id="liveToastBtn">My item is now faulty, what should I do?</button></li>
-
-                <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+               <li> 
+                <button type="button" class="btn liveToastBtn" id="liveToastBtn1" data-toast-id="liveToast1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                </svg> My item is now faulty, what should I do?</button>
+              </li>
+                <div id="liveToast1" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                       <div class="toast-body">
                         We're so sorry to hear your item is now broken or damaged. Please <a href="./contact.html">contact our Customer Care Team</a> with your order number, a photo of the item and the name/product code of the item and we'll do our best to resolve this for you.
@@ -161,9 +174,14 @@
                       <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                   </div>
-               <li> <button type="button" class="btn btn-link" id="liveToastBtn">I need to change my delivery address.</button></li>
+               <li> 
+                <button type="button" class="btn liveToastBtn" id="liveToastBtn2" data-toast-id="liveToast2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              </svg> I need to change my delivery address.</button>
+              </li>
 
-                <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div id="liveToast2" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                       <div class="toast-body">
                         If your order has not been dispatched, you may be able to change your delivery address. <a href="./contact.html">Please get in touch with our Customer Care Team</a> here as soon as possible with your order number and the new address.
@@ -171,9 +189,12 @@
                       <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                   </div>
-               <li> <button type="button" class="btn btn-link" id="liveToastBtn">I recieved the wrong item, what should I do?</button></li>
+               <li> <button type="button" class="btn liveToastBtn" id="liveToastBtn3" data-toast-id="liveToast3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              </svg> I recieved the wrong item, what should I do?</button></li>
 
-                <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div id="liveToast3" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                       <div class="toast-body">
                         We are so sorry about this inconvenience. Please <a href="./contact.html">get in touch with us</a>  so that we can best assist you.
@@ -181,9 +202,12 @@
                       <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
                   </div>
-               <li> <button type="button" class="btn btn-link" id="liveToastBtn">Can I cancel an order?</button></li>
+               <li> <button type="button" class="btn liveToastBtn" id="liveToastBtn4" data-toast-id="liveToast4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+              </svg> Can I cancel an order?</button></li>
 
-                <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div id="liveToast4" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                       <div class="toast-body">
                         If your order has not been dispatched, you may be able to cancel your order. <a href="./contact.html">Get in touch with us here</a> as soon as possible so we can assist you.

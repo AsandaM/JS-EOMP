@@ -1,9 +1,11 @@
-const toastTrigger = document.getElementById('liveToastBtn')
-const toastLiveExample = document.getElementById('liveToast')
+const toastTriggers = document.querySelectorAll('.liveToastBtn')
 
-if (toastTrigger) {
+toastTriggers.forEach((toastTrigger) => {
+  const toastId = toastTrigger.dataset.toastId
+  const toastLiveExample = document.getElementById(toastId)
   const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+
   toastTrigger.addEventListener('click', () => {
     toastBootstrap.show()
   })
-}
+})
