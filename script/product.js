@@ -8,16 +8,21 @@ function Product(name, image, price, description, category) {
 }
 
 // Create new products
-let product1 = new Product('Gold Bead Butterfly Bracelet', 'https://asandam.github.io/images/bracelet.jpg', 119.99, 'Pair this gold bead and butterfly motif bracelet with a fine chain for an on-tren look.', 'bracelet');
-let product2 = new Product('Product 2', 'https://asandam.github.io/images/bracelet2.jpg', 29.99, 'This is product 2');
-let product3 = new Product('Product 3', 'https://asandam.github.io/images/combo.jpg', 39.99, 'This is product 3');
-let product4 = new Product('Product 3', 'https://asandam.github.io/images/necklace.jpg', 39.99, 'This is product 3');
-let product5 = new Product('Product 3', 'https://asandam.github.io/images/combo3.jpg', 39.99, 'This is product 3');
-let product6 = new Product('Product 3', 'https://asandam.github.io/images/earings5.jpg', 39.99, 'This is product 3');
-let product7 = new Product('Product 3', 'https://asandam.github.io/images/necklace4.png', 39.99, 'This is product 3');
-let product8 = new Product('Product 3', 'https://asandam.github.io/images/combo1.jpg', 39.99, 'This is product 3');
+let product1 = new Product('Gold Heart Shaped Earrings', 'https://asandam.github.io/images/pexels.jpg', 689.99, 'Pair this gold bead and butterfly motif bracelet with a fine chain for an on-tren look.', 'earring');
+let product2 = new Product('Gold Plated Necklace', 'https://asandam.github.io/images/necklace4.png', 789.99, 'Sparkle and shine with our classic gold-plated sterling silver cubic zirconia jewellery', 'necklace');
+let product3 = new Product('Gold Linked Heart Bracelet', 'https://asandam.github.io/images/rosegold.png', 399.99, ' Add this heart linked bracelet to your collection for the ultimate signature look.', 'bracelet');
+let product4 = new Product('Gold Classic Twisted Hoop Earings', 'https://asandam.github.io/images/jewellery/ecrin.jpg', 389.99, 'These Gold Classic Twisted Hoop Earrings are crafted from 100% stainless steel, making them highly resistant and durable for everyday wear.', 'earring');
+let product5 = new Product('Gold Bead & Pearl Choker Pack', 'https://asandam.github.io/images/jewellery/erik.jpg', 499.99, 'This beaded necklace evokes major luxury holiday vibes! It features multicoloured pastel beads, gold-toned elements and faux pearls. Playful yet sophisticated, wear this from day to night.', 'necklace');
+let product6 = new Product('Blue Coated Petal Drop Earrings', 'https://asandam.github.io/images/jewellery/ashuphotography.jpg', 599.99, 'These earrings feature a gorgeous, blue coated petal design - perfect for a night out or your next event.', 'earring');
+let product7 = new Product('Gold Textured Bangle', 'https://asandam.github.io/images/jewellery/mlkbnl-12.jpg', 999.99, 'Jingle, jangle I like your bangle! This cute pack includes six gold-toned bangles with a textured finish that will shine when they hit the light','bracelet');
+let product8 = new Product('Gold Cubic Zirconia Solitaire Ring', 'https://asandam.github.io/images/jewellery/the-glorious.jpg', 1899.99, 'Make an elegant statement with a stunning ring! This lovely ring is gold plated and it features a charming cubic zirconia design. If you like it, then you should shine with it.', 'ring');
+let product9 = new Product('Silver-colored Bangle', 'https://asandam.github.io/images/jewellery/jacob.jpg', 359.99, 'Style this bangle multi-pack with matching gold accessories for an on-trend look.', 'bracelet');
+let product10 = new Product('Rose Silver Triple Stone Ring', 'https://asandam.github.io/images/jewellery/glorious.jpg', 3999.99, 'This cocktail-inspired ring features a rose gold setting and triple stone design for a unique finish.', 'ring');
+let product11 = new Product('Green Round Beaded Ring', 'https://asandam.github.io/images/jewellery/prado.jpg', 1299.99, 'If you like it, put a ring on it! Expand your jewellery collection with our range of trending and timeless rings.', 'ring');
+let product12 = new Product('Gold Plated Fine Chain Necklace', 'https://asandam.github.io/images/jewellery/jill.jpg', 799.99, 'This Gold Plated Stainless Steel Fine Chain Layered Necklace is crafted from 100% stainless steel, making it highly resistant and durable for everyday wear.', 'necklace');
 
-let products = [product1, product2, product3, product4, product5, product6, product7, product8];
+
+let products = [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12];
 
 let productRow = document.querySelector('#product-row');
 
@@ -26,13 +31,13 @@ function addProductToPage(product, index) {
     let productElement = document.createElement('div');
     productElement.innerHTML = `
         <div class="col">
-            <div class="card h-100">
-                <img src="${product.image}" class="card-img-top img-fluid" alt="${product.name}">
+            <div class="card style="width: 18rem;">
+                <img src="${product.image}" class="card-img-top" alt="${product.name}" style="height: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${product.name}</h5>
                     <p class="price">R${product.price}</p>
-                    <button class="btn btn-primary">Add to Cart</button>
-                    <button data-bs-toggle="modal" data-bs-target="#productModal-${index}" class="btn btn-primary">View More</button>
+                    <button class="btn btn-link">Add to Cart</button>
+                    <button data-bs-toggle="modal" data-bs-target="#productModal-${index}" class="btn btn-link">View More</button>
                 </div>
             </div>
         </div>
@@ -46,11 +51,12 @@ function addProductToPage(product, index) {
                     </div>
                     <div class="modal-body">
                         <img src="${product.image}" class="img-fluid" alt="${product.name}">
-                        <p>${product.description}</p>
-                        <p class="price">R${product.price}</p>
+                        <p class="mt-3 fst-italic">${product.description}</p>
+                        <p class="price fw-bold mt-3">R${product.price}</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -80,7 +86,9 @@ function sortProductsDesc() {
 }
 
 // Event listener for the sort select element
-document.getElementById('sort').addEventListener('change', function() {
+let sortItems = document.getElementById('sort')
+
+sortItems.addEventListener('change', function() {
     let value = this.value;
     if (value === 'asc') {
         sortProductsAsc();
@@ -96,7 +104,10 @@ document.getElementById('sort').addEventListener('change', function() {
 });
 
 // Event listener for the filter select element
-document.getElementById('filter').addEventListener('change', function() {
+
+let filterItems = document.getElementById('filter')
+
+filterItems.addEventListener('change', function() {
     let value = this.value;
     // Filter the products array
     let filteredProducts = products.filter(function(product) {
