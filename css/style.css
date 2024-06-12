@@ -227,6 +227,13 @@ footer p{
     margin: auto;
 }
 
+select{
+    border: none;
+    background-color: #e1d5cd;
+    border-bottom: 1px solid #aa7b4c;
+    color: #555;
+}
+
 /* admin style */
 table, th, td {
     border: 1px solid black;
@@ -336,3 +343,5 @@ td{
     background-image: url('https://asandam.github.io/images/jewellery/pixabay.jpg');
     background-color: #e1d5cd; 
 }
+
+/* checkout style */
