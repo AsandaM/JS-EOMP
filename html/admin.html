@@ -19,7 +19,7 @@
               </svg></button>
               <input type="text" id="search-input" placeholder="Search..." style="display: none;">
         </div>
-            <button type="button" class="btn position-relative" id="cart-button">
+           <a href="./checkout.html"> <button type="button" class="btn position-relative" id="cart-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-basket2" viewBox="0 0 16 16">
                     <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0z"/>
                     <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6z"/>
@@ -29,7 +29,7 @@
                   <span class="visually-hidden">unread messages</span>
                 </span>
               </button>
-
+            </a>
               <div id="cart-popup" style="display: none;">
                 <button id="close-cart-popup" style="position: absolute; right: 10px; top: 10px;">X</button>
                 <h2>Shopping Cart</h2>
@@ -101,7 +101,7 @@
 
                 <br>
                 <p class="fs-5 fw-bold">PLEASE NOTE:</p>
-                <ul>
+                <ul id="p1">
                     <li>The estimated delivery time is from the date the order has shipped, not necessarily the date of the order. All orders are usually shipped within 2 business days.</li>
                     <li>Business days do not include weekends or public holidays.</li>
                     <li>We are not responsible for any delay, late delivery or failure to deliver.</li>
@@ -119,15 +119,13 @@
           <div class="card h-100 bg-transparent">
             <div class="card-body">
               <h5 class="card-title">Returns & Exchanges</h5>
-              <p class="card-text">
+              <div id="p1" class="card-text">
                 <h1>It's about you, always!</h1>
-
-                If you change your mind within 30 days, you can obtain a refund to the original payment method if you have your original receipt or proof of purchase. Items returned must be in their original sale condition. 
-                <br> 
-                <b>Unfortunately, we cannot refund or exchange earrings, body piercing products, hair accessories and face masks for hygiene reasons. We also cannot refund or exchange gift cards.</b>
-
-                <p>PLEASE NOTE:</p>
-                <p><b>CONDITIONS OF RETURN</b></p>
+                <p>If you change your mind within 30 days, you can obtain a refund to the original payment method if you have your original receipt or proof of purchase. Items returned must be in their original sale condition. <br> 
+                <b>Unfortunately, we cannot refund or exchange earrings for hygiene reasons.</b></p> 
+               
+                <br>
+                <p class="fw-bold">CONDITIONS OF RETURN:</p>
                 <ul>
                     <li>Items returned must be in their original sale condition (unworn and unused with all original packaging and labels)</li>
                     <li>Earrings cannot be returned for change of mind reasons</li>
@@ -136,7 +134,7 @@
                 <p>If you do not return the item within a reasonable time, you will not be entitled to a refund of the purchase price, but you will be entitled to exchange the goods or have them repaired.
                     <br>
                     If you are entitled to a refund but you would prefer to exchange the item or receive a gift card of equivalent value to the item, We is happy to exchange or give you a gift card.</p>
-              </p>
+                </div>
             </div>
           </div>
         </div>
