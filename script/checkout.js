@@ -35,45 +35,14 @@ function displayData(purchasedItems){
 
     cart.innerHTML = table;
 
-    // Add event listeners to increase and decrease buttons
-    let increaseButtons = document.querySelectorAll('.increase');
-    let decreaseButtons = document.querySelectorAll('.decrease');
 
-    increaseButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            let index = e.target.dataset.index;
-            if (purchasedItems[index].quantity !== undefined) {
-                purchasedItems[index].quantity += 1;
-                updateLocalStorage();
-                displayData(purchasedItems);
-            } else {
-                console.error(`Item at index ${index} does not have a quantity`);
-            }
-        });
-    });
-
-    decreaseButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            let index = e.target.dataset.index;
-            if (purchasedItems[index].quantity !== undefined) {
-                if (purchasedItems[index].quantity > 1) {
-                    purchasedItems[index].quantity -= 1;
-                } else {
-                    // Optional: Remove the item if quantity is 1 and decrease is clicked
-                    purchasedItems.splice(index, 1);
-                }
-                updateLocalStorage();
-                displayData(purchasedItems);
-            } else {
-                console.error(`Item at index ${index} does not have a quantity`);
-            }
-        });
-    });
 }
 
-function updateLocalStorage() {
-    localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
-}
+// function updateLocalStorage() {
+// }
+localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
 
 
 displayData(purchasedItems)
+
+
