@@ -1,3 +1,20 @@
+//spinner
+window.addEventListener('load', function() {
+    // Hide the spinner after all images have loaded
+    document.getElementById('spinner').style.display = 'none';
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    // Show the spinner as soon as the DOM is ready (before images have finished loading)
+    document.getElementById('spinner').style.display = 'block';
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    let year = new Date().getFullYear();
+    document.getElementById('footer').innerHTML = 'Copyright &copy; ' + year + ' Jewellery Store by Asanda Mehlo';
+  });
+  
+
 // Product constructor function
 function Product(id, name, image, price, description, category, colour) {
     this.id = id;
@@ -74,6 +91,7 @@ function addProductToPage(products) {
         // productRow.appendChild(productElement);
 
     })
+    purchase()
 }
 
 // Loop through the products array and add each product to the page
@@ -109,7 +127,7 @@ sortItems.addEventListener('change', function() {
     productRow.innerHTML = '';
     // Apply the current filter to the sorted products
     let displayedProducts = currentFilter ? products.filter(product => product.category === currentFilter) : products;
-    // Loop through the sorted and filtered products array and add each product to the page
+    // Add the sorted and filtered products to the page
     addProductToPage(displayedProducts);
     purchase()
 });
@@ -155,19 +173,18 @@ colorItems.addEventListener('change', function() {
         // If the selected value is an empty string, display all products
         addProductToPage(products);
     } else {
-        // Filter the products array
-        let filteredProducts = products.filter(function(product) {
-            return product.colour === value;
-        });
-        // Loop through the filtered products array and add each product to the page
+        // Add the filtered products to the page
         addProductToPage(filteredProducts);
-        purchase()
     }
+    purchase()
 });
 
 
+
 //display search
-document.querySelector('.nav-link').addEventListener('click', function(event) {
+let navLink = document.querySelector('.nav-link');
+
+navLink.addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default action (navigating to ./product.html)
     let searchInput = document.getElementById('search-input');
     if (searchInput.style.display === 'none') {
@@ -176,48 +193,51 @@ document.querySelector('.nav-link').addEventListener('click', function(event) {
         searchInput.style.display = 'none';
     }
 });
+let searchInput = document.getElementById('search-input');
 
-document.getElementById('search-input').addEventListener('input', function(event) {
-    let searchTerm = event.target.value.toLowerCase();
-    let filteredProducts = products.filter(product => {
-        return product.name.toLowerCase().includes(searchTerm)
-            || product.category.toLowerCase().includes(searchTerm)
-            || product.colour.toLowerCase().includes(searchTerm); // Fix the typo here
-    });
+searchInput.addEventListener('input', function(event) {
+    try {
+        let searchTerm = event.target.value.toLowerCase();
+        let filteredProducts = products.filter(product => {
+            return (product.name && product.name.toLowerCase().includes(searchTerm))
+                || (product.category && product.category.toLowerCase().includes(searchTerm))
+                || (product.colour && product.colour.toLowerCase().includes(searchTerm));
+        });
 
-    // Clear the current displayed products
-    productRow.innerHTML = '';
+        // Clear the current displayed products
+        productRow.innerHTML = '';
 
-    // Loop through the filtered products array and add each product to the page
-    filteredProducts.forEach((product, index) => {
-        addProductToPage(product, index);
-    });
+        // Add the filtered products to the page
+        addProductToPage(filteredProducts);
+    } catch (error) {
+        console.log('An error occurred while filtering products: ', error);
+    }
+    purchase()
 });
 
-// Function to add a product to the cart
 function purchase(){
-let btns = document.querySelectorAll('#btnCart');
-let purchasedItems = items || [];
+    let btns = document.querySelectorAll('#btnCart');
+    let purchasedItems = items || [];
 
-btns.forEach(button =>{
-    button.addEventListener('click', ()=>{
-        let x = products.find(item => item.id == button.value)
-        
-        // purchasedItems.push(x)
-        // let productId = button.dataset.productId
-        let purchasedItem = purchasedItems.find(pItem => pItem.id === x.id)
+    btns.forEach(button =>{
+        button.addEventListener('click', ()=>{
+            try {
+                let x = products.find(item => item.id == button.value)
+                let purchasedItem = purchasedItems.find(pItem => pItem.id === x.id)
 
-        if (purchasedItem) {
-            purchasedItem.price += x.price 
-            purchasedItem.quantity += 1
-        } else {
-            purchasedItems.push(x)
-        }
-
-        console.log(purchasedItems);
-        localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
-
+                if (purchasedItem) {
+                    purchasedItem.price += x.price 
+                    purchasedItem.quantity += 1
+                } else {
+                    purchasedItems.push(x)
+                    console.log(purchasedItems);
+                }
+                // Update the purchasedItems in the localStorage
+                localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
+            } catch (error) {
+                console.error('An error occurred while purchasing a product:', error);
+            }
+        })
     })
-})
 }
 purchase()
