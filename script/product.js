@@ -84,7 +84,6 @@ function sortProductsAsc() {
     products.sort(function(a, b) {
         return a.price - b.price;
     });
-    localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
 }
 
 // Function to sort products by price in descending order
@@ -111,9 +110,8 @@ sortItems.addEventListener('change', function() {
     // Apply the current filter to the sorted products
     let displayedProducts = currentFilter ? products.filter(product => product.category === currentFilter) : products;
     // Loop through the sorted and filtered products array and add each product to the page
-    displayedProducts.forEach((product, index) => {
-        addProductToPage(product, index);
-    });
+    addProductToPage(displayedProducts);
+    purchase()
 });
 
 // Event listener for the filter select element
@@ -155,18 +153,15 @@ colorItems.addEventListener('change', function() {
     productRow.innerHTML = '';
     if (value === '') {
         // If the selected value is an empty string, display all products
-        products.forEach((product, index) => {
-            addProductToPage(product, index);
-        });
+        addProductToPage(products);
     } else {
         // Filter the products array
         let filteredProducts = products.filter(function(product) {
             return product.colour === value;
         });
         // Loop through the filtered products array and add each product to the page
-        filteredProducts.forEach((product, index) => {
-            addProductToPage(product, index);
-        });
+        addProductToPage(filteredProducts);
+        purchase()
     }
 });
 
@@ -198,6 +193,8 @@ document.getElementById('search-input').addEventListener('input', function(event
         addProductToPage(product, index);
     });
 });
+
+// Function to add a product to the cart
 function purchase(){
 let btns = document.querySelectorAll('#btnCart');
 let purchasedItems = items || [];
