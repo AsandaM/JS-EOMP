@@ -25,3 +25,14 @@ toastTriggers.forEach((toastTrigger) => {
     toastBootstrap.show()
   })
 })
+
+let items = JSON.parse(localStorage.getItem('purchasedItems'))
+let purchasedItems = items || [];
+
+function updateTotalQuantity() {
+  document.querySelector('.position-absolute').innerText = purchasedItems.reduce((total, current) => {
+      return current.quantity + total;
+  }, 0);
+}
+
+updateTotalQuantity()
