@@ -14,10 +14,6 @@
     </div>
     <div class="nav-icons">
         <div class="search-container">
-            <button class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-              </svg></button>
-              <input type="text" id="search-input" placeholder="Search..." style="display: none;">
         </div>
         <a class="nav-link active" href="./checkout.html">
             <button type="button" class="btn position-relative">
@@ -43,8 +39,8 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./product.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./product.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="./help.html">Help</a></li>
                     <li class="nav-item"><a class="nav-link" href="./admin.html">Admin</a></li>
@@ -52,7 +48,7 @@
             </div>
         </div>
     </nav>
-    <main>
+    <main id="mainCheckout">
 
         <!-- spinner -->
         <div id="spinner" class="text-center" style="display: none;">
@@ -67,6 +63,8 @@
             <div class="row">
               <div id="cart" class="col">
                 
+
+                <!-- table -->
               </div>
             </div>
           </div>
@@ -75,39 +73,56 @@
             <h1 class="mb-4">Checkout</h1>
             <div class="row align-items-end">
                 <div class="col-md-8">
-                    <h4 class="mb-3 mt-5">Payment</h4>
+                    <h4 class="mb-1 mt-2">Payment</h4>
                     <p>All transactions are secure and encrypted.</p>
                     <form action="https://formcarry.com/s/SpSXqcRRU7e" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <!-- <label for="exampleFormControlInput1" class="form-label fw-bold">Full Name:</label> -->
                             <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Card number">
                           </div>
                         <div class="mb-3 d-flex justify-content-between">
-                            <!-- <label for="exampleFormControlInput1" class="form-label fw-bold">Email address:</label> -->
-                            <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Expiration date (MM/YY)">
-                            <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Security code">
+                            <input type="date" name="date" class="form-control" id="date" placeholder="Expiration date (MM/YY)">
+                            <input type="text" name="cvv" class="form-control" id="cvv" placeholder="Security code">
                             
                           </div>
                           <div class="mb-3">
-                            <!-- <label for="exampleFormControlTextarea1" class="form-label fw-bold">Message:</label> -->
-                            <input name="message" name="message" class="form-control" id="exampleFormControlTextarea1" placeholder="Name on card"></input>
+                            <input type="text" name="cardName" class="form-control" id="cardName" placeholder="Name on card"></input>
                           </div>
-                          <!-- <button id="submit" type="submit" class="btn btn-lg fw-bold">SUBMIT</button> -->
                         </form>
                 </div>
                 <div class="col-md-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="text-muted">SubTotal</span>
-                        <span class="badge bg-secondary rounded-pill">0</span>
+                        <span class="fw-semibold">SubTotal</span>
+                        <span id="totalQ" class="badge bg-secondary rounded-pill">0</span>
                     </h4>
                     <ul class="list-group mb-3">
                         <!-- Add list items for each product in the cart here -->
                         <li class="list-group-item d-flex justify-content-between">
                             <span>SubTotal</span>
-                            <strong>R0.00</strong>
+                            <strong id="subTotal">R0.00</strong>
                         </li>
                     </ul>
-                    <button id="submit" type="submit" class="btn btn-lg fw-bold">Pay Now</button>
+                    <!-- Button trigger modal -->
+                  <button id="submitBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Pay Now
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          Thank you for shopping with us!
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>

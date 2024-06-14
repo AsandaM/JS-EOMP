@@ -43,6 +43,8 @@ let product12 = new Product(12, 'Gold Plated Fine Chain Necklace', 'https://asan
 
 let products =JSON.parse(localStorage.getItem('products'))|| [product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12];
 
+let items = JSON.parse(localStorage.getItem('purchasedItems'))
+
 let tableBody = document.querySelector('#productTable tbody');
 
 products.forEach((product, index) => {
@@ -59,7 +61,7 @@ products.forEach((product, index) => {
     </tr>
   `;
 });
-
+ 
 
 // Function to render the table
 function renderTable() {
@@ -83,10 +85,9 @@ function renderTable() {
   });
 }
 
-// Call renderTable to initially render the table
 renderTable();
 
-// Get the modal and form elements
+
 let modal = document.getElementById('editModal');
 let form = document.getElementById('editForm');
 
@@ -100,7 +101,6 @@ tableBody.addEventListener('click', function(event) {
     // Check if the clicked element is an "Edit" button
     if (event.target.classList.contains('btn-primary')) {
       // Edit button was clicked
-
       // Open the modal and populate the form with the product data
       form.name.value = product.name;
       form.image.value = product.image;
@@ -150,7 +150,7 @@ tableBody.addEventListener('click', function(event) {
   });
 });
 
-// Get the add product form and the save changes button
+
 let addProductForm = document.getElementById('addProductForm');
 let saveChangesButton = document.querySelector('.modal-footer .btn-primary');
 
@@ -186,3 +186,12 @@ saveChangesButton.addEventListener('click', function(event) {
   
 });
 
+let purchasedItems = items || [];
+
+function updateTotalQuantity() {
+  document.querySelector('.position-absolute').innerText = purchasedItems.reduce((total, current) => {
+      return current.quantity + total;
+  }, 0);
+}
+
+updateTotalQuantity()
